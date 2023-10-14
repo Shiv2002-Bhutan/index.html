@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Online Voting System</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to Election 2023</h1>
+        <div class="menu">
+            <button onclick="showVoterRegistrationForm()">Register as Voter</button>
+            <button onclick="showVotingForm()">Cast Vote</button>
+            <button onclick="showVoteCount()">Find Vote Count</button>
+            <button onclick="showLeadingCandidate()">Find Leading Candidate</button>
+            <button onclick="showRegisteredVoters()">Display Registered Voters</button>
+            <button onclick="resetVotingProcess()">Reset Voting Process</button>
+        </div>
+        <div class="content">
+            <div id="voterRegistration" style="display: none">
+                <h2>Voter Registration Form</h2>
+                <form id="registrationForm">
+                    <label for="cid">CID No:</label>
+                    <input type="text" id="cid" name="cid" required><br><br>
+
+                    <label for="age">Age:</label>
+                    <input type="number" id="age" name="age" required><br><br>
+
+                    <button type="button" onclick="registerVoter()">Register</button>
+                </form>
+            </div>
+            <div id="votingForm" style="display: none">
+                <h2>Cast Vote</h2>
+                <form id="voteForm">
+                    <label for="voterCID">CID No:</label>
+                    <input type="text" id="voterCID" name="voterCID" required><br><br>
+
+                    <label for="candidateChoice">Choose Candidate:</label>
+                    <select id="candidateChoice" name="candidateChoice">
+                        <option value="DPT">DPT</option>
+                        <option value="DTT">DTT</option>
+                        <option value="DTP">DTP</option>
+                        <option value="DNT">DNT</option>
+                    </select><br><br>
+
+                    <button type="button" onclick="castVote()">Cast Your Vote</button>
+                </form>
+            </div>
+            <div id="voteCount" style="display: none">
+                <h2>Vote Count Summary</h2>
+                <p id="voteCountSummary"></p>
+            </div>
+            <div id="leadingCandidate" style="display: none">
+                <h2>Leading Candidate Info</h2>
+                <p id="leadingCandidateInfo"></p>
+            </div>
+            <div id="registeredVoters" style="display: none">
+                <h2>Registered Voters List</h2>
+                <ul id="registeredVotersList"></ul>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
